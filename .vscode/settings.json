@@ -1,0 +1,6 @@
+{
+  "less.compile": {
+    "compress":  true,  // true => remove surplus whitespace
+    "autoprefixer": "iOS >= 8, Android > 4.4"
+  }
+}
