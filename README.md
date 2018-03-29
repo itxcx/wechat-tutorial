@@ -3,7 +3,7 @@
 
 ## 特性
 
-- :rocket: **技术栈**：异步处理终极方案async/await
+- :rocket: **技术栈**：异步处理终极方案async/await、使用less
 - :gem: **优雅美观**：[微信小程序商城](https://github.com/EastWorld/wechat-app-mall)，感谢[@EastWorld](https://github.com/EastWorld)
 - :1234: **数据**：[api工厂](https://www.it120.cc/)
 

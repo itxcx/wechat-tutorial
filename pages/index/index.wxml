@@ -2,7 +2,7 @@
 <!--1px = 750/320 = 2.34rpx;-->
 <view class="container">
    <view class="swiper-container">
-        <swiper class="swiper_box" 
+        <swiper class="swiper-box" 
                     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
             <block wx:for="{{banners}}" wx:key="id">
                 <swiper-item>
@@ -35,11 +35,11 @@
     </view>
   </view>
     <view wx:if="{{noticeList}}" class="notice">
-      <view class="notice_iteml">公告：</view>
-      <swiper wx:if="{{noticeList}}" class="notice_swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+      <view class="notice-iteml">公告：</view>
+      <swiper wx:if="{{noticeList}}" class="notice-swiper" vertical="true" autoplay="true" circular="true" interval="3000">
         <navigator wx:for-items="{{noticeList.dataList}}" wx:key="id" url="/pages/notice/show?id={{item.id}}" open-type="navigate">
           <swiper-item >
-            <view class="notice_itemr">{{item.title}}</view>
+            <view class="notice-itemr">{{item.title}}</view>
           </swiper-item>
         </navigator>
       </swiper>
