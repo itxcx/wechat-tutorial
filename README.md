@@ -7,6 +7,10 @@
 - :gem: **优雅美观**：[微信小程序商城](https://github.com/EastWorld/wechat-app-mall)，感谢[@EastWorld](https://github.com/EastWorld)
 - :1234: **数据**：[api工厂](https://www.it120.cc/)
 
+## 微信小程序不支持特性
+
+1、不支持css * 选择器选取所有元素。
+
 ## 框架
 
 ### 注册程序(App)
