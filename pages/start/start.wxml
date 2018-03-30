@@ -13,7 +13,7 @@
       <view class="bd">
         <image class="small-title" src="/images/more/confirm-word1.png"></image>
         <view class="confirm-btn" bindtap='goToIndex'>
-          <text >进入商城</text>
+          <text>进入商城</text>
         </view>
         <text class="copyright">@sosout 贡献本页代码</text>
       </view>

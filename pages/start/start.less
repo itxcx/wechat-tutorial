@@ -1,4 +1,15 @@
 /** start.less **/
+page {
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 10pt;
+    line-height: 150%;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* 决定主轴的方向 主轴为垂直方向，起点在上沿*/
+    align-items: stretch; /* 定义项目在交叉轴上如何对齐 如果项目未设置高度或设为auto，将占满整个容器的高度。*/
+}
+
 .container {
     position: relative;
     flex: 1; /* flex-grow, flex-shrink 和 flex-basis的简写 定义项目的放大比例、定义了项目的缩小比例、定义了在分配多余空间之前，项目占据的主轴空间 */

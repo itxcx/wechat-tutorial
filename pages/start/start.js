@@ -36,6 +36,7 @@ Page({
       });
     }, 1000);
 
+    // 监听加速度数据
     wx.onAccelerometerChange((res) => {
       let angle = -(res.x * 30).toFixed(1);
       if (angle > 14) {
