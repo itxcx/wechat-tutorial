@@ -31,7 +31,7 @@ const userWxappLogin = (params) => promisePost(params, '/user/wxapp/login', subD
  * @param {token} 登录token
  * 
  */
-const userCheckToken = (params) => promiseGet(params, '/user/check-token');
+const userCheckToken = (params) => promiseGet(params, '/user/check-token', subDomain1);
 
 /**
  * 详细信息注册 https://www.it120.cc/apis/19

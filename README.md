@@ -9,7 +9,7 @@
 
 ## 框架
 
-### 注册程序
+### 注册程序(App)
 
 [注册程序](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/app-service/app.html)
 

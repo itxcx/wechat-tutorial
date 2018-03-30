@@ -5,8 +5,14 @@ import { getConfigValue, scoreSendRule, userWxappLogin, userCheckToken, userRegi
 App({
   onLaunch () {
     const that = this;
-    // 登录
-    that.login();
+    const token = wx.getStorageSync('TOKEN');
+    if (token) {
+      // 检测登录token是否有效
+      that.checkToken({token: token});
+    } else {
+      // 登录
+      that.login();
+    }
 
     // 获取商城名称
     that.getConfigValue({key: 'mallName'});
@@ -14,6 +20,44 @@ App({
     that.getConfigValue({key: 'recharge_amount_min'});
 
     that.scoreSendRule({code: 'goodReputation'});
+  },
+  // 检测登录token是否有效
+  async checkToken (params) {
+    const that = this;
+    const res = await userCheckToken(params);
+    if (res.data.code != 0) {
+      wx.removeStorageSync('TOKEN');
+      that.login();
+    }
+  },
+  // 登录
+  async login() {
+    const that = this;
+    wx.login({
+      async success(result) {
+        // 小程序登录获取Token
+        const res = await userWxappLogin({code: result.code});
+        if (res.data.code == 10000) {
+          // 去注册
+          that.registerUser();
+          return;
+        }
+        if (res.data.code == 0) {
+          wx.setStorageSync('TOKEN', res.data.data.token);
+          wx.setStorageSync('UID', res.data.data.uid);
+        } else {
+          // 登录错误
+          wx.hideLoading(); // 隐藏 loading 提示框
+          // 显示模态弹窗
+          wx.showModal({
+            title: '提示',
+            content: '无法登录，请重试',
+            showCancel: false
+          })
+          return;
+        }
+      }
+    })
   },
   // 获取商城名称
   async getConfigValue (param) {
@@ -37,44 +81,7 @@ App({
       that.globalData.order_reputation_score = res.data.data[0].score;
     }
   },
-  async login() {
-    const that = this;
-    const token = that.globalData.token;
-    if (token) {
-      // 检测登录token是否有效
-      const res = await userCheckToken({token: token});
-      if (res.data.code != 0) {
-        that.globalData.token = null;
-        that.login();
-      }
-      return;
-    }
-    wx.login({
-      async success(result) {
-        // 小程序登录获取Token
-        const res = await userWxappLogin({code: result.code});
-        if (res.data.code == 10000) {
-          // 去注册
-          that.registerUser();
-          return;
-        }
-        if (res.data.code == 0) {
-          that.globalData.token = res.data.data.token;
-          that.globalData.uid = res.data.data.uid;
-        } else {
-          // 登录错误
-          wx.hideLoading(); // 隐藏 loading 提示框
-          // 显示模态弹窗
-          wx.showModal({
-            title: '提示',
-            content: '无法登录，请重试',
-            showCancel: false
-          })
-          return;
-        }
-      }
-    })
-  },
+  // 注册
   registerUser() {
     const that = this;
     wx.login({
