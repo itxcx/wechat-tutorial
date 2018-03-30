@@ -90,7 +90,7 @@ const fetchDiscounts = (params) => promiseGet(params, '/discounts/fetch');
  */
 const getNoticeList = (params) => promiseGet(params, '/notice/list');
 
-module.exports = {
+export {
   getConfigValue,
   scoreSendRule,
   userWxappLogin,

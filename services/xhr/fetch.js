@@ -64,7 +64,7 @@ const promisePost = (params, url, header={'content-type': 'application/x-www-for
   return fetch(setting);
 };
 
-module.exports = {
+export {
   promiseGet,
   promisePost
 }
