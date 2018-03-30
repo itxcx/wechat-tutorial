@@ -71,7 +71,6 @@ App({
         that.globalData.recharge_amount_min = res.data.data.value;
       }
     }
-    
   },
   // 获取系统中设置的积分赠送规则参数
   async scoreSendRule (param) {
