@@ -15,7 +15,9 @@
 
 1、授权界面允许和拒绝按钮开发者工具和真机上顺序相反
 
-## 获取用户信息方案介绍(解决微信不弹出授权页面)
+## 获取用户信息方案介绍
+
+### 解决微信不弹出授权页面
 
 参考链接：[获取用户信息方案介绍](https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=1135655580&docid=c45683ebfa39ce8fe71def0631fad26b)
 
@@ -27,6 +29,10 @@
 1、API wx.getUserInfo 只会弹一次框，用户拒绝授权之后，再次调用将不会弹框
 
 2、组件 由于是用户主动触发，不受弹框次数限制，只要用户没有授权，都会再次弹框
+
+### 获取用户信息
+
+wx.openSetting(OBJECT)
 
 ## 框架
 
