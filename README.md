@@ -17,7 +17,7 @@
 
 ## 获取用户信息方案介绍(解决微信不弹出授权页面)
 
-[获取用户信息方案介绍](https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=1135655580&docid=c45683ebfa39ce8fe71def0631fad26b)
+参考链接：[获取用户信息方案介绍](https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=1135655580&docid=c45683ebfa39ce8fe71def0631fad26b)
 
 ```html
 <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler"> Click me </button>
